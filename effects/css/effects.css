@@ -1,0 +1,133 @@
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,body {
+  height: 100%;
+  font-family: Sans-Serif;
+  margin: 0;
+  padding: 0;
+  color: #4E4E4E;
+}
+
+.wrapper {
+	max-width: 980px;
+	width: 100%;
+	margin: 0 auto;
+	padding-top: 15px;
+	padding-bottom: 50px;
+}
+
+.main-title{
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+/* Меню */
+.menu {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  margin-bottom: 100px;
+  padding: 0;
+  list-style-type: none;
+  width: 100%;
+}
+.menu__item {
+  margin: 0;
+  padding: 0;
+}
+.menu__item-drop {
+  position: relative;
+  transition: all .2s ease-in;
+}
+.menu__link {
+  position: relative;
+  padding: 15px 30px;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #AB86FF;
+  transition: all .2s ease-in;
+}
+
+.menu__link--special {
+  position: relative;
+  color: #FFEF37;
+  font-weight: bold;
+}
+
+.menu__link::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 2px;
+  width: 0%;
+  left: 30px;
+  background-color: #FFEF37;
+  transition: all .2s ease-in;
+}
+
+.menu__link:hover::after {
+  width: calc(100% - 60px);
+}
+
+.menu__drop {
+  visibility: hidden;
+  opacity: 0;
+  width: 150px;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  transition: all .2s ease-in;
+}
+.menu__drop-item {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #fff;
+}
+.menu__drop-link {
+  padding: 15px 30px;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #7A40FF;
+  transition: all .2s ease-in;
+}
+
+.menu__drop-link:hover {
+  background-color: #AB86FF;
+}
+
+.menu__item-drop:hover .menu__drop {
+  visibility: visible;
+  opacity: 1;
+  top: 50px;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 45px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #FF3737;
+  color: #fff;
+  border-radius: 5px;
+  transition: all .2s ease-in;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #FF8080;
+  background-color: #FF8080;
+}
