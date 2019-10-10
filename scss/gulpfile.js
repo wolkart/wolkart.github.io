@@ -12,33 +12,12 @@ var gulp       = require('gulp'), // Подключаем Gulp
 	autoprefixer = require('gulp-autoprefixer');// Подключаем библиотеку для автоматического добавления префиксов
 
 gulp.task('sass', function() { // Создаем таск Sass
-	return gulp.src('app/sass/**/*.sass') // Берем источник
+	return gulp.src('app/sass/**/*.scss') // Берем источник
 		.pipe(sass()) // Преобразуем Sass в CSS посредством gulp-sass
 		.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) // Создаем префиксы
 		.pipe(gulp.dest('app/css')) // Выгружаем результата в папку app/css
 		.pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
 });
-
-// gulp.task('less', function(){ // Создаем таск Less
-// 	return gulp.src('./app/less/main.less') // Берем источник
-//         .pipe(plumber({ // Запускаем Plumber для нахождения и устранения ошибок
-//             errorHandler: notify.onError(function(err){
-//                 return {
-//                     title: 'Styles',
-//                     message: err.message
-//                 }
-//             })
-//         }))
-//         .pipe(sourcemaps.init())
-//         .pipe(less())
-//         .pipe(autoprefixer({ // Создаем префиксы
-//             browsers: ['last 15 versions', '> 1%', 'ie 8', 'ie 7'],
-//             cascade: false
-//         }))
-//         .pipe(sourcemaps.write())
-//         .pipe(gulp.dest('./app/css')) // Выгружаем результата в папку app/css
-//         .pipe(browserSync.stream()); // Обновляем CSS на странице при изменении
-// });
 
 gulp.task('browser-sync', function() { // Создаем таск browser-sync
 	browserSync.init({ // Выполняем browserSync
@@ -49,49 +28,19 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 	});
 });
 
-gulp.task('scripts', function() {
-	return gulp.src([ // Берем все необходимые библиотеки
-		'app/libs/jquery/jquery-1.11.2.min.js', // Берем jQuery
-		])
-		.pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
-		.pipe(uglify()) // Сжимаем JS файл
-		.pipe(gulp.dest('app/js')); // Выгружаем в папку app/js
-});
-
 gulp.task('code', function() {
 	return gulp.src('app/*.html')
 	.pipe(browserSync.reload({ stream: true }))
-});
-
-gulp.task('css-libs', function() {
-	return gulp.src('app/sass/libs.sass') // Выбираем файл для минификации
-		.pipe(sass()) // Преобразуем Sass в CSS посредством gulp-sass
-		.pipe(cssnano()) // Сжимаем
-		.pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
-		.pipe(gulp.dest('app/css')); // Выгружаем в папку app/css
 });
 
 gulp.task('clean', async function() {
 	return del.sync('dist'); // Удаляем папку dist перед сборкой
 });
 
-gulp.task('img', function() {
-	return gulp.src('app/img/**/*') // Берем все изображения из app
-		.pipe(cache(imagemin({ // С кешированием
-		// .pipe(imagemin({ // Сжимаем изображения без кеширования
-			interlaced: true,
-			progressive: true,
-			svgoPlugins: [{removeViewBox: false}],
-			use: [pngquant()]
-		}))/**/)
-		.pipe(gulp.dest('dist/img')); // Выгружаем на продакшен
-});
-
 gulp.task('prebuild', async function() {
 
 	var buildCss = gulp.src([ // Переносим библиотеки в продакшен
-		'app/css/main.css',
-		'app/css/libs.min.css'
+		'app/css/main.css'
 		])
 	.pipe(gulp.dest('dist/css'))
 
@@ -111,9 +60,9 @@ gulp.task('clear', function (callback) {
 })
 
 gulp.task('watch', function() {
-	gulp.watch('app/sass/**/*.sass', gulp.parallel('sass')); // Наблюдение за sass файлами
+	gulp.watch('app/sass/**/*.scss', gulp.parallel('sass')); // Наблюдение за sass файлами
 	gulp.watch('app/*.html', gulp.parallel('code')); // Наблюдение за HTML файлами в корне проекта
-	gulp.watch(['app/js/common.js', 'app/libs/**/*.js'], gulp.parallel('scripts')); // Наблюдение за главным JS файлом и за библиотеками
+	gulp.watch(['app/js/common.js', 'app/libs/**/*.js']); // Наблюдение за главным JS файлом и за библиотеками
 });
-gulp.task('default', gulp.parallel('css-libs', 'sass', 'scripts', 'browser-sync', 'watch'));
-gulp.task('build', gulp.parallel('prebuild', 'clean', 'img', 'sass', 'scripts'));
+gulp.task('default', gulp.parallel('sass', 'browser-sync', 'watch'));
+gulp.task('build', gulp.parallel('prebuild', 'clean', 'sass'));

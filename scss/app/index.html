@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SCSS</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div class="wrapper">
+		<h1 class="main-title">SCSS</h1>
+		<ul class="menu">
+			<li class="menu__item"><a href="../../index.html" class="menu__link">Главная</a></li>
+			<li class="menu__item"><a href="#" class="menu__link">О нас</a></li>
+			<li class="menu__item"><a href="#" class="menu__link">Как мы работаем</a></li>
+			<li class="menu__item"><a href="#" class="menu__link">Приемущества</a></li>
+			<li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
+		</ul>
+
+		<div class="breadcrumb">
+			<ul class="breadcrumb__list">
+				<li class="breadcrumb__item"><a href="../../index.html" class="breadcrumb__link">Главная</a></li>
+				<li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Каталог</a></li>
+				<li class="breadcrumb__item">Товары для дома</li>
+			</ul>
+		</div>
+
+		<div class="products">
+			<h2 class="title products__title">Список товаров</h2>
+			<div class="card-wrapper">
+				<!-- Карточка -->
+				<div class="card">
+					<div class="card__img">
+						<img src="img/noroot.png" alt="">
+					</div>
+					<div class="card__title">Карточка товара-1</div>
+					<div class="card__price">990₽</div>
+					<a href="#" class="button card__button">Заказать</a>
+				</div>
+				<!-- // Карточка -->
+
+				<!-- Карточка -->
+				<div class="card">
+					<div class="card__img">
+						<img src="img/369947-200.png" alt="">
+					</div>
+					<div class="card__title">Карточка товара-2</div>
+					<div class="card__price card__price--special">590₽</div>
+					<a href="#" class="button card__button card__button--special">Заказать</a>
+				</div>
+				<!-- // Карточка -->
+
+				<!-- Карточка -->
+				<div class="card">
+					<div class="card__img">
+						<img src="img/machine.png" alt="">
+					</div>
+					<div class="card__title">Карточка товара-3</div>
+					<div class="card__price">990₽</div>
+					<a href="#" class="button card__button">Заказать</a>
+				</div>
+				<!-- // Карточка -->
+			</div>
+		</div>
+
+		<div class="form-wrapper">
+			<h2 class="title form__title">Напишите нам</h2>
+			<form action="" class="contact-form">
+				<input type="text" class="contact-form__input" placeholder="Ваше имя">
+				<input type="text" class="contact-form__input" placeholder="Ваш телефон">
+				<textarea name="" class="contact-form__textarea" placeholder="Ваше сообщение"></textarea>
+				<input type="submit" value="Отправить" class="button contact-form__submit">
+			</form>
+		</div>
+	</div>
+</body>
+</html>
