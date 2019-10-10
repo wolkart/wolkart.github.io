@@ -13,3 +13,198 @@ html,body {
   padding: 0;
   color: #4E4E4E;
 }
+
+.wrapper {
+	max-width: 980px;
+	width: 100%;
+	margin: 0 auto;
+	padding-top: 15px;
+	padding-bottom: 50px;
+}
+
+/* Меню */
+.menu {
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	width: 100%;
+}
+.menu__item {
+	margin: 0;
+	padding: 0;
+}
+.menu__link {
+	padding: 15px 30px;
+	display: block;
+	text-decoration: none;
+	color: #fff;
+	text-transform: uppercase;
+	background-color: #2C3965;
+	transition: all .2s ease-in;
+}
+
+.menu__link:hover {
+	background-color: #1D274B;
+}
+
+
+/* Хлебные крошки */
+.breadcrumb {
+	width: 100%;
+	padding-top: 50px;
+}
+.breadcrumb__list {
+	display: flex;
+	margin: 0;
+	padding: 10px 0 10px 10px;
+	list-style-type: none;
+	background-color: #E5E5E5;
+}
+.breadcrumb__item {
+	margin: 0;
+	margin-right: 10px;
+	padding: 0;
+	padding-right: 10px;
+	border-right: 1px solid #1D274B;
+}
+.breadcrumb__item:last-child {
+	border: none;
+}
+.breadcrumb__link {
+	text-decoration: none;
+	color: #1D274B;
+	border-bottom: 1px solid transparent;
+	transition: all .2s ease-in;
+}
+
+.breadcrumb__link:hover {
+	border-color:#1D274B; 
+}
+
+
+/* Товары */
+.products {
+	padding-top: 60px;
+}
+.title {
+	margin: 0;
+}
+.products__title {
+	text-align: center;
+	margin-bottom: 50px;
+}
+.card-wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+.card {
+	max-width: 300px;
+	width: 100%;
+	box-shadow: 1px 1px 10px rgba(0,0,0,.3);
+	text-align: center;
+	border-radius: 5px;
+	padding-bottom: 15px;
+}
+.card__img {
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+.card__img img{
+	height: 250px;
+	width: 250px;
+	object-fit: cover;
+}
+.card__title {
+	color: #1D274B;
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+.card__price {
+	font-size: 27px;
+	color: #2C3965;
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+.card__price--special {
+	color: #FF4C4C;
+}
+.button {
+	display: inline-block;
+	padding: 12px 25px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.card__button {
+	color: #fff;
+	background-color: #1D274B;
+	border-radius: 5px;
+	transition: all .2s ease-in;
+}
+
+.card__button:hover {
+	background-color: #2C3965;
+	box-shadow: 0px 0px 10px #2C3965;
+}
+
+.card__button--special {
+	background-color: #FF4C4C;
+}
+.card__button--special:hover {
+	background-color: #FF7878;
+	box-shadow: 0px 0px 10px #FF7878;
+}
+
+
+/* Форма */
+.form-wrapper {
+	padding-top: 60px;
+}
+.form__title {
+	margin-bottom: 30px;
+}
+.contact-form {
+	display: flex;
+	flex-direction: column;
+	max-width: 450px;
+	width: 100%;
+}
+.contact-form__input {
+	height: 50px;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	margin-bottom: 5px;
+	transition: all .2s ease-in;
+	padding-left: 15px;
+}
+.contact-form__input:hover,
+.contact-form__input:focus {
+	border-color: #2C3965;
+} 
+.contact-form__textarea {
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	transition: all .2s ease-in;
+	padding-top: 15px;
+	padding-left: 15px;
+	min-height: 100px;
+	margin-bottom: 15px;
+}
+.contact-form__textarea:hover,
+.contact-form__textarea:focus {
+	border-color: #2C3965;
+}
+.contact-form__submit {
+	max-width: 200px;
+	color: #fff;
+	background-color: #1D274B;
+	border-radius: 5px;
+	transition: all .2s ease-in;
+	border: none;
+	cursor: pointer;
+}
+.contact-form__submit:hover {
+	background-color: #2C3965;
+}
