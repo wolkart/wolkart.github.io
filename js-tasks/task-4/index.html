@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<pre>
+		let login = prompt('Введите логин', '');
+
+		if(login == 'Админ') {
+		  let pass = prompt("Введите пароль", '');
+		  if(pass == 'Я главный') {
+		    alert('Здравствуйте');
+		  } else if(pass == '' || pass == null){
+		    alert('Отменено');    
+		  } else {
+		    alert('Неверный пароль');
+		  }
+		} else if(login == '' || login == null) {
+		  alert('Отменено');
+		} else {
+		  alert('Я вас не знаю');
+		}
+	</pre>
+	<script src="script.js"></script>
+</body>
+</html>

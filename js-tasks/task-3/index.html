@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<pre>
+		let age = prompt("Сколько вам лет?", "");
+
+		if (age >= 18) {
+			alert("Проходи в клуб.");
+		} else {
+			alert("Иди делай уроки.");
+		}
+
+
+		let go = confirm("Пойдем гулять?");
+
+		if ( go == true) {
+			alert("Жду на улице")
+		} else {
+			alert("Спокойной ночи")
+		}
+
+		
+		2. Переписать ? в if
+	    	var x = 4, b = 3;
+	    	(x % 2 > 0) ? result = 'Yeee' : result = 'Oooo noo'
+
+		var x = 4, b = 3;
+		if (x % 2 > 0) {
+			result = 'Yeee';
+		} else {
+			result = 'Oooo noo';
+		}
+
+		3. Переписать if в ?
+		    if (x == true) {
+		        console.log('true')
+		    } else {
+		        console.log('false')
+		    }
+
+		x = x == true ? console.log('true') : console.log('false');
+
+
+		4. Переписать ? в if else
+		    var age = 91;
+		    var text = (age < 18) ? console.log('Привет') :
+		      (age < 90) ? console.log('Здравствуйте') :
+		      (age < 150) ? console.log('Ничего себе') :
+		      console.log('Упс что-то пошло не так');
+		
+		var age = 91;
+		if (age < 18) {
+			console.log('Привет');
+		} else if (age < 90) {
+			console.log('Здравствуйте');
+		} else if (age < 150) {
+			console.log('Упс что-то пошло не так');
+		}
+
+
+		let result = prompt("Сколько будет 2 + 2 * 2 ?", "");
+
+		if (result == 6) {
+			alert("Все верно, молодец!");
+		} else {
+			alert("Не верно, подумай еще.");
+		}
+	</pre>
+	<script src="script.js"></script>
+</body>
+</html>
