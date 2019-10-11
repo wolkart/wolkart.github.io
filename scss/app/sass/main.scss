@@ -1,3 +1,9 @@
+$main-text:#4E4E4E;
+$main:#2C3965;
+$main-dark:#1D274B;
+$action:#FF4C4C;
+$action-hover:#FF7878;
+
 *,
 *:before,
 *:after {
@@ -11,8 +17,8 @@ html,body {
   font-family: Sans-Serif;
   margin: 0;
   padding: 0;
-  color: #4E4E4E;
-} 
+  color: $main-text;
+}
 
 .wrapper {
 	max-width: 980px;
@@ -46,10 +52,10 @@ html,body {
 		text-decoration: none;
 		color: #fff;
 		text-transform: uppercase;
-		background-color: #2C3965;
+		background-color: $main;
 		transition: all .2s ease-in;
 		&:hover{
-			background-color: #1D274B;
+			background-color: $main-dark;
 		}
 	}
 }
@@ -68,15 +74,15 @@ html,body {
 		margin-right: 10px;
 		padding: 0;
 		padding-right: 10px;
-		border-right: 1px solid #1D274B;
+		border-right: 1px solid $main-dark;
 		&:last-child{border: none;}
 	}
 	&__link {
 		text-decoration: none;
-		color: #1D274B;
+		color: $main-dark;
 		border-bottom: 1px solid transparent;
 		transition: all .2s ease-in;
-		&:hover{border-color:#1D274B;}
+		&:hover{border-color:$main-dark;}
 	}
 }
 .products {
@@ -107,34 +113,34 @@ html,body {
 		}
 	}
 	&__title {
-		color: #1D274B;
+		color: $main-dark;
 		font-weight: bold;
 		font-size: 20px;
 		margin-bottom: 20px;
 	}
 	&__price {
 		font-size: 27px;
-		color: #2C3965;
+		color: $main;
 		font-weight: bold;
 		margin-bottom: 30px;
 		&--special {
-			color: #FF4C4C;
+			color: $action;
 		}
 	}
 	&__button {
 		color: #fff;
-		background-color: #1D274B;
+		background-color: $main-dark;
 		border-radius: 5px;
 		transition: all .2s ease-in;
 		&:hover{
-			background-color: #2C3965;
-			box-shadow: 0px 0px 10px #2C3965;
+			background-color: $main;
+			box-shadow: 0px 0px 10px $main;
 		}
 		&--special {
-			background-color: #FF4C4C;
+			background-color: $action;
 			&:hover{
-				background-color: #FF7878;
-				box-shadow: 0px 0px 10px #FF7878;
+				background-color: $action-hover;
+				box-shadow: 0px 0px 10px $action-hover;
 			}
 		}
 	}
@@ -166,7 +172,7 @@ html,body {
 		transition: all .2s ease-in;
 		padding-left: 15px;
 		&:hover,&:focus{
-			border-color: #2C3965;
+			border-color: $main;
 		}
 	}
 	&__textarea {
@@ -178,17 +184,17 @@ html,body {
 		min-height: 100px;
 		margin-bottom: 15px;
 		&:hover,&:focus{
-			border-color: #2C3965;
+			border-color: $main;
 		}
 	}
 	&__submit {
 		max-width: 200px;
 		color: #fff;
-		background-color: #1D274B;
+		background-color: $main-dark;
 		border-radius: 5px;
 		transition: all .2s ease-in;
 		border: none;
 		cursor: pointer;
-		&:hover{background-color: #2C3965;}
+		&:hover{background-color: $main;}
 	}
 }

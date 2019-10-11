@@ -24,11 +24,12 @@ h2{
 }
 
 .wrapper {
-	display: flex;
 	width: 100%;
 	min-height: 100%;
-	padding: 50px 0;
+	padding: 50px 0 50px 30px;
 }
+
+.main-wrapper{display: flex;padding-left: 0;}
 .wrapper__col {
 	flex: 0 0 50%;
 	display: flex;

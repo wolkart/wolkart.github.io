@@ -82,6 +82,15 @@ html,body {
   color: #fff;
   font-size: 16px;
   cursor: pointer;
+  transition: all .2s ease-in;
+  outline: none;
+}
+.form__submit:hover,
+.form__submit:focus{
+  background-color: #FC6665;
+}
+.form__submit:active{
+  background-color: #D00100;
 }
 .check {
   display: block;
