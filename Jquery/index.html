@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jquery</title>
+</head>
+<body>
+	<pre>
+		<strong>Все абзацы &lt;p&gt;, внутри которых есть &lt;b&gt;, оберните в тег &lt;div&gt;.</strong>
+
+		$('p:has(b)').wrap('&lt;div&gt;');
+	</pre>
+	<pre>
+		<strong>Поставьте всем незаблокированным чекбоксам статус "отмечен".</strong>
+
+		$(':checkbox:not([disabled])').prop('checked', true);
+	</pre>
+	<pre>
+		<strong>Найдите десятый &lt;li&gt; на странице, найдите его родителя, получите непосредственного соседа родителя сверху, оберните его в &lt;div class="www"&gt;</strong>
+
+		$('li:eq(9)').parent().prev().wrap('&lt;div class="www"&gt;');
+	</pre>
+	<pre>
+		<strong>Родителю тега &lt;b&gt;, если это элемент с классом .www или абзац &lt;p&gt;, поставьте красный цвет и размер текста в 30px.</strong>
+
+		Первый вариант с проверкой:
+		$('b').each(function() {
+			var $parent = $(this).parent();
+			if ($parent.is('.www') || $parent.is('p')) {
+				$parent.css({color: 'red', fontSize: '30px'});
+			}
+		});
+		
+		Второй вариант без if:
+		$('b').each(function() {
+			$(this).parent('.www, p').css({color: 'red', fontSize: '30px'});
+		});
+
+		Третий без цикла:
+		$('b').parent('.www, p').css({color: 'red', fontSize: '30px'});
+	</pre>
+	<pre>
+		<strong>Дан элемент &lt;div&gt;. Выберите из него всех непосредственных потомков, которые не являются заголовками и покрасьте их в красный цвет.</strong>
+		
+		Первый вариант:
+		$('div > *:not(h2)').css('color', 'red');
+
+		Второй вариант:
+		$('div').children().not('h2').css('color', 'red');
+
+		Третий вариант:
+		$('div').children(':not(h2)').css('color', 'red');
+	</pre>
+	<pre>
+		<strong>Даны абзацы с числами. Поставьте каждому из них в конец число, которое в нем хранится, умноженное на его порядковый номер в наборе.</strong>
+
+		Первый вариант:
+		$('p').each(function() {
+			var $elem = $(this);
+			var index = $(this).index();
+			var text = $(this).html();
+			$elem.append(index * text);
+		});
+
+		Второй вариант:
+		$('p').append(function (index, text) {
+			return index * text;
+		});
+	</pre>
+	<pre>
+		<strong>По нажатию на абзац &lt;p&gt; удалите его пятого соседа снизу, если это не &lt;h2&gt;.</strong>
+
+		$('p').on('click', function() {
+        		$(this).nextAll().eq(4).not('h2').remove();
+	    	});
+	</pre>
+	<pre>
+		<strong>Дан элемент #test. Поменяйте этот элемент местами с его ближайшим соседом снизу с классом .www.</strong>
+
+		var $elem = $('#test');
+		var $neighbor = $elem.nextAll('.www').first(); //neighbor - это сосед
+		$elem.clone().insertAfter($neighbor);
+		$neighbor.insertAfter($elem);
+		$elem.remove();
+	</pre>
+	<pre>
+		<strong>Найдите всех родителей элемента #test и создайте массив из CSS классов этих родителей.</strong>
+
+		var arr = [];
+		$('#test').parents().each( function() {
+			var classes = $(this).attr('class');
+			if (classes) {
+				arr = arr.concat(classes.split(' '));
+			}
+		});
+		console.log(arr);
+	</pre>
+	<pre>
+		<strong>Найдите &lt;ol&gt; с #test и переставьте все &lt;li&gt; в нем в обратном порядке.</strong>
+
+		var $ol = $('#test');
+		$ol.html( $ol.children().get().reverse() );
+	</pre>
+	<pre>
+		<strong>Найдите сумму высот всех &lt;div&gt; на странице.</strong>
+
+		var sum = 0;
+		$('div').height(function (index, value) {
+			sum +=value;
+		});
+
+		console.log(sum);
+	</pre>
+</body>
+</html>
